@@ -1,12 +1,12 @@
 cask "my-gemini-app" do
   # 1. 버전: GitHub Release 태그와 일치해야 합니다. (v는 제외)
-  version "1.0.3"
+  version "1.0.6"
   
   # 2. SHA256 체크섬: 아래 'shasum' 명령어로 계산한 값을 여기에 붙여넣으세요.
-  sha256 "bae076a2c0e703c128b0c3fdf15770eec2a9e8f05941bf5a43dc80abe4259339"
+  sha256 "81565d0207080c67aa706e9cfa5afd451ce6d99d95d1a994abad6d5ee185d50c"
 
   # 3. 다운로드 URL: GitHub Release에 있는 .dmg 파일의 다운로드 주소입니다.
-  url "https://github.com/ChoiSeungWoo98/gemini_app/releases/download/v1.0.3/My.Gemini.App-1.0.1-arm64.dmg"
+  url "https://github.com/ChoiSeungWoo98/gemini_app/releases/download/v1.0.6/Gemini-1.0.6-arm64.dmg"
   
   # 4. 앱 이름과 홈페이지
   name "My Gemini App"
