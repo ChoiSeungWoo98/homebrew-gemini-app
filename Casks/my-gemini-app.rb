@@ -14,4 +14,18 @@ cask "my-gemini-app" do
 
   # 5. 실제 설치될 .app 파일의 이름
   app "My Gemini App.app"
+
+  # 추가된 부분: '손상된 앱' 오류를 해결하기 위해
+  # macOS가 인터넷에서 다운로드한 파일에 부여하는 '격리' 속성을 제거합니다.
+  postflight do
+    system_command "xattr", args: ["-cr", "#{appdir}/My Gemini App.app"]
+  end
+
+  # 추가된 부분: 앱을 완전히 제거할 때 관련 데이터도 함께 삭제합니다.
+  # (appId는 package.json에 명시된 값입니다)
+  zap trash: [
+    "~/Library/Application Support/My Gemini App",
+    "~/Library/Saved Application State/com.choiseu.gemini-app.savedState",
+    "~/Library/Preferences/com.choiseu.gemini-app.plist",
+  ]
 end
